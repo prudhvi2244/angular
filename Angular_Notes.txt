@@ -1,0 +1,214 @@
+Angular : Latest Version :12
+--------------------------------
+1)Angular is a framework to build client side applications
+2)Great for single page applications
+3)Modular Approach
+4)Re-usable code
+5)Development Quicker and Easier
+6)Unit Testable
+7)Google + Microsoft
+
+Angular JS
+
+Angular 2
+
+
+Official Website : http://www.angular.io
+
+What’s Single Page Application?
+===============================
+The single page application is a web application or website that interacts with the user by dynamically 
+rewriting the current page, rather than loading entire new pages from the server.
+
+What is Type Script?
+=========================
+TypeScript is a programming language developed and maintained by Microsoft. 
+It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
+TypeScript is designed for the development of large applications and transcompiles to JavaScript.
+
+Pre-Requisites to Learn Angular:
+====================================
+1)Html,Css,Java Script and Basics of Type script
+
+
+Development Environment:
+=====================================
+1)Node : [http://www.nodejs.org]
+After Successful Installation use following command
+         node -v
+2)npm [ node packet manager ]
+  npm install bootstrap
+3)Angular CLI [Command Line Interface]
+
+4)Text Editor : VS Code
+
+Angular CLI :
+=====================
+The Angular CLI is a command-line interface tool that you use to initialize, develop, maintain
+Angular applications directly from a command shell.
+
+Install the CLI using the npm package manager
+.....................................................
+
+                npm install -g @angular/cli
+
+Check For Installation:
+================================
+		ng --version
+
+
+To Create New Angular Project use the following command:
+==============================================================
+
+		ng new Project_Name
+
+To Run Angular Project use the following command:
+================================================================
+ 
+ 		ng serve
+
+By default angular application will run on port no : 4200
+
+React           : 3000
+Angular         : 4200
+Tomcat Server   : 8080
+MySQL           : 3306
+Oracle          : 1521
+PostgreSQL      : 5432
+
+
+One Root Component
+
+
+
+
+..............................................................................
+1)Components
+2)Interpolation
+3)Property Binding
+4)Class Binding
+5)Style Binding
+6)Event Binding
+7)Template Reference Variable
+8)Two Way Binding
+9)ngIf Directive
+10)ngSwitch Directive
+11)ngFor Directive
+12)Pipes
+
+
+13)Services
+14)Depedency Injection
+15)Using a service
+16)Http and Observables
+17)Fetch Data using Http
+18)Http Error Handling
+19)Routing and Navigation
+20)Wildcard Route and Redirecting Routes
+21)Route Parameters
+22)paramMap Observable
+
+
+* Every angular application contains one root module called AppModule
+* Each module made up of components and services
+* Component describes part of UI
+* Every angular application contains one root component called as AppComponent
+
+Components : Html + Class
+Services   : Business Logic
+
+* Modules interact and ultimately render the view in the browser
+
+src/app
+=========
+app.component.html
+app.component.css
+app.component.ts
+
+
+Component is made up of 3 parts:
+====================================
+1)Template   : View : HTML
+2)Class	     : code : Type Script : Data and Methods
+3)Metadata   : Information : Decorator
+
+Template + Class + Metadata : Angular Component
+
+
+
+Syntax To Generate Component
+========================================
+ng generate component home
+ng g c about : about-root
+
+src/app/home:
+   home.component.html
+   home.component.css
+   home.component.ts
+   home.component.spec.ts
+
+ 
+Selector : 3 ways to specify selector
+=========================================
+ 1)Tag Selector     :  selector : app-root
+ 2)Class Selector   :  selector : .app-root
+ 3)Id Selector      :  selector : #app-root
+
+Template : we can define in 2 ways
+=========================================
+ 1)External Template  : templateUrl : './home.html'
+ 2)Inline Template    : template    : '<h1>Welcome To Angular</h1>'
+						(or)								
+					`
+					<h1>Welcome To Angular</h1>
+
+					`
+
+Styles : we can define in 2 ways
+=======================================
+1)External Styles     : styleUrls  : ['./mystyles.css']
+2)Inline Styles	      : styles	   : [
+					`
+					h1
+					{
+					  color:red;
+					}
+					`
+					
+				     ]
+
+
+
+Interpolation :
+========================
+1)To bind data from class to template[html]
+2){{property or expression}}
+3)can perform string concatenation and can use java script properties and methods
+4)cannot perform assignments or access global java script variables
+5)Interpolation can work only with strings
+
+Property Binding:
+========================
+1)Attributes and Properties are not same 
+2)Attributes are defined by HTML
+3)Properties are defined by DOM
+4)Attributes initialize DOM properties and they are done.Attribute values cannot change
+  once they are initialized
+5)Property values can change
+
+<input [id]="property" />
+
+<input [disabled]="false" />
+
+Class Binding:
+======================
+Style Binding:
+
+
+
+Structural Directives:
+=================================
+
+=>Structural Directives are directives which change the structure of the DOM by adding or 
+  removing elements. 
+=>There are three built-in structural directives, ngIf , ngFor and ngSwitch 
