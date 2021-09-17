@@ -11,7 +11,11 @@ export class CustomerlistComponent implements OnInit {
   constructor(private _cservice:CustomerService) { }
   customers=[]
   ngOnInit(): void {
-       this.customers=this._cservice.getAllCustomers()
+       
+    this._cservice.getAllCustomers().subscribe(data=>
+      {
+        this.customers=data
+      })
   }
 
   
