@@ -1,0 +1,19 @@
+<h3>Customer Detail Component</h3>
+<hr/>
+<h4>All Customer Details</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Customer City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let customer of customers">
+            <td>{{customer.cid}}</td>
+            <td>{{customer.cname}}</td>
+            <td>{{customer.ccity}}</td>
+        </tr>
+    </tbody>
+</table>
