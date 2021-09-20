@@ -95,8 +95,6 @@ One Root Component
 10)ngSwitch Directive
 11)ngFor Directive
 12)Pipes
-
-
 13)Services
 14)Depedency Injection
 15)Using a service
@@ -200,15 +198,86 @@ Property Binding:
 
 <input [disabled]="false" />
 
-Class Binding:
-======================
-Style Binding:
-
-
-
-Structural Directives:
-=================================
-
+* Class Binding
+* Style Binding
+* Structural Directives
+  =================================
 =>Structural Directives are directives which change the structure of the DOM by adding or 
   removing elements. 
 =>There are three built-in structural directives, ngIf , ngFor and ngSwitch 
+
+* Event Binding
+* Template Reference Variable
+* Two Way Data Binding
+* Pipes ( | )
+  =>lowercase
+  =>uppercase
+  =>titlecase
+  =>slice
+  =>json
+  =>number
+  =>percent 
+  =>currency
+  =>date 
+    short
+    shortdate
+    shorttime
+    medium
+    mediumdate
+    mediumtime
+    long
+    longdate
+    longtime
+
+* Service:
+  A class with specific purpose
+
+  1)Share Data
+  2)Implement application logic
+  3)Extenal Interaction
+
+
+* HTTP and Obervables
+
+Observable:
+========================
+A sequence of items that arrive asynchronously over time
+Http Call : Single Item
+Single Item : Http Response
+	
+
+* Routing and Navigation
+* Wildcard Route and Redirecting Routes
+* Route Parameters
+* ParamMap Observable
+* Optional Route Parameters
+
+* Angular Forms
+  1)Template Driven Forms
+  2)Reactive Forms
+
+
+Template Driven Forms:
+=========================
+1)Easy To Use
+2)Two way data binding with ngModel
+3)Bulky HTML and minimal component code
+4)Automatically tracks the form and form elements state and validity
+5)Readability decreases with complex forms and validations
+
+
+Reactive Forms:
+=========================
+1)Code and logic resides in component class
+2)No Two Way Data Binding
+3)Well suited for complex scenarios
+4)Dynamic Form Fields
+5)Custom Validation
+6)Dynamic Validation
+7)Unit Testing
+
+
+
+
+
+
