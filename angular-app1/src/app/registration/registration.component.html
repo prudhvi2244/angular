@@ -1,0 +1,35 @@
+    <h3>Registration Form</h3>
+    <hr/>
+   <form #userForm="ngForm" (ngSubmit)="handleForm()">
+       <!-- <h5>{{userForm.value | json}}</h5>
+       <hr/>
+       <h5>{{registration | json}}</h5> -->
+    <div class="form-group">
+        <label>First Name</label>
+        <input [class.is-invalid]="fname.invalid && fname.touched"  required name="fname" #fname="ngModel" [(ngModel)]="registration.fname" type="text"
+         class="form-control">
+        <small [class.d-none]="fname.valid || fname.untouched" class="text-danger">First Name Required</small>
+       
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input required name="lname" #lname="ngModel" 
+        [class.is-invalid]="lname.invalid && lname.touched"
+        [(ngModel)]="registration.lname" type="text" class="form-control">
+        <small [class.d-none]="lname.valid || lname.untouched" class="text-danger">Last Name Required</small>
+       
+    </div>
+    <div class="form-group">
+        <label>Mobile</label>
+        <input required #mobile="ngModel" [class.is-invalid]="mobile.invalid && mobile.touched" name="mobile" [(ngModel)]="registration.mobile"  type="text" class="form-control">
+        <small [class.d-none]="mobile.valid || mobile.untouched" class="text-danger">Mobile is Required</small>
+       
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input required #email="ngModel" [class.is-invalid]="email.invalid && email.touched" type="email" [(ngModel)]="registration.email" name="email" ngModel  class="form-control">
+        <small [class.d-none]="email.valid || email.untouched" class="text-danger">Email is Required</small>
+       
+    </div>
+    <button class="m-3 btn btn-primary">Register</button>
+  </form>

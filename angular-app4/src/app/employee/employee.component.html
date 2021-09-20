@@ -1,19 +1,40 @@
-<h3>All Employees</h3>
+<h3 class="bg-success text-white">Employee Registration Form</h3>
 <hr/>
+<h5>{{registrationForm.value | json}}</h5>
+<form [formGroup]="registrationForm">
+<div class="form-group">
+    <label for="">Username</label>
+    <input 
+     [class.is-invalid]="registrationForm.get('username').invalid && registrationForm.get('username').touched"
+     class="form-control" formControlName="username"/>
+     <div *ngIf="registrationForm.get('username').invalid && registrationForm.get('username').touched">
+        <small *ngIf="registrationForm.get('username').errors?.required">Username is required</small>
+        <small *ngIf="registrationForm.get('username').errors?.minlength">Username Must Be Minimum 4 Characters</small>
+     </div>
+    <!-- <small [class.d-none]="registrationForm.get('username').valid || registrationForm.get('username').untouched" 
+    class="text-danger">Username is required</small>  -->
+</div>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Employee ID</th>
-            <th>Employee Name</th>
-            <th>Employee City</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor='let employee of employees'>
-            <td>{{employee.eid}}</td>
-            <td>{{employee.ename}}</td>
-            <td>{{employee.ecity}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="form-group">
+    <label for="">Password</label>
+    <input formControlName="password" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">Confirm Password</label>
+    <input formControlName="cpassword" class="form-control"/>
+</div>
+<div formGroupName="address">
+
+
+<div class="form-group">
+    <label for="">City</label>
+    <input formControlName="city" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="">State</label>
+    <input formControlName="state" class="form-control"/>
+</div>
+</div>
+<button [disabled]="registrationForm.invalid" class="btn btn-success">Register</button>
+<button (click)="loadData()" class="btn btn-primary m-3">Load Data</button>
+</form>

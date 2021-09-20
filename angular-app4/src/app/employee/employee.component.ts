@@ -1,20 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../employee.service';
-
+import { Component} from '@angular/core';
+import { FormBuilder, Validators} from '@angular/forms';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeComponent  {
 
-  constructor(private eservice:EmployeeService) { }
-  employees=[]
-    ngOnInit(): void {
-   this.eservice.getAllEmployees().subscribe(data=>
+  constructor(private fb:FormBuilder){}
+
+  cities=["Hyderabad","Goa","Mumbai","Kolkata"]
+
+  registrationForm=this.fb.group({
+    username:['',[Validators.required,Validators.minLength(4)]],
+    password:[''],
+    cpassword:[''],
+    address:this.fb.group(
     {
-      this.employees=data
+      city:[''],
+      state:['']
     })
-  }
+  })
 
+  loadData()
+  {
+
+  }
+ 
+ 
 }
