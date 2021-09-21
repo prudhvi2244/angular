@@ -1,2 +1,5 @@
 <h3>All Employees</h3>
 <hr/>
+<ul *ngFor="let employee of employees">
+    <li (click)="handleEmployees(employee)">{{employee.ename}}</li>
+</ul>
