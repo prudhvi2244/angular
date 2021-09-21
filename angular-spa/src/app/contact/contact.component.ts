@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '../contact';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  msg1:any=''
+  constructor(private cservice:ContactService) { }
+
+  contact=new Contact('','','')  
 
   ngOnInit(): void {
+  }
+
+ 
+
+  handleForm()
+  {
+    this.cservice.register(this.contact).subscribe(
+      data=>
+      {
+        console.log(typeof(data))
+        console.log(data)
+        this.msg1=data
+        this.contact=new Contact('','','')
+      },
+        error=>console.log(error)
+    )
   }
 
 }

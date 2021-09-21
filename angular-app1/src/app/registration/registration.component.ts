@@ -7,30 +7,25 @@ import { RegistrationService } from '../registration.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationComponent  {
 
   constructor(private rservice:RegistrationService) { }
 
-  ngOnInit(): void {
-  }
-
-  registration=new Registration('','','','')
+  registration=new Registration('','','')
 
 
   handleForm()
   {
-    this.rservice.register(this.registration).subscribe(
-      data=>
+     console.log(this.registration)
+     this.rservice.register(this.registration).subscribe(data=>
       {
-        console.log(data)
-        this.registration=new Registration('','','','')
+        console.log(data["msg"])
+        this.registration=new Registration('','','')
       },
-        error=>
-        {
-          console.log(error)
-          this.registration=new Registration('','','','')
-        }
-          )
-  }
+      error=>
+      {
+        console.log(error)
+      })
+    }
 
 }

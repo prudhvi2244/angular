@@ -10,7 +10,7 @@ export class RegistrationService {
 
   register(registration)
   {
-     return this._http.post('http://localhost:8080/customer/register',registration);
+     return this._http.post("http://localhost:8080/user/register",registration);
   }
 
 }
