@@ -1,0 +1,48 @@
+<form [formGroup]="registrationForm">
+    <h3>Registration Form</h3>
+    <hr/>
+    <div class="form-group">
+        <label>First Name</label>
+        <input formControlName="fname" 
+         [class.is-invalid]="registrationForm.get('fname').invalid && registrationForm.get('fname').touched " 
+          class="form-control">
+        <!-- <small [class.d-none]="registrationForm.get('fname').valid ||registrationForm.get('fname').untouched  " class="text-danger">First Name is required</small>    -->
+    
+      <div *ngIf="registrationForm.get('fname').invalid && registrationForm.get('fname').touched">
+        <small class="text-danger" *ngIf="registrationForm.get('fname').errors?.required">First Name is required</small>
+        <small class="text-danger" *ngIf="registrationForm.get('fname').errors?.minlength">First Name Should be minimum 3 characters</small>
+        <small class="text-danger" *ngIf="registrationForm.get('fname').errors?.maxlength">First Name Should be maximum 10 characters</small>
+      </div>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input formControlName="lname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input formControlName="password" type="password"  class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input formControlName="cpassword" type="password"  class="form-control">
+    </div>
+    <div formGroupName="address">
+        <div class="form-group">
+            <label>State</label>
+            <input formControlName="state" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input formControlName="city" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Pincode</label>
+            <input formControlName="pincode" class="form-control">
+        </div>
+  </div>
+    
+    <button (click)="handleForm()" class="btn btn-primary">Register</button>
+    <button (click)="loadData()" class="btn btn-success m-2">Load Data</button>
+</form>
+<hr/>
+

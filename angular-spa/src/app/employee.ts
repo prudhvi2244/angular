@@ -1,4 +1,4 @@
 export class Employee
 {
-    constructor(public eid:number,ename:string,public ecity:string,esalary:string){}
+    constructor(public eid:number,public ename:string,public ecity:string,public esalary:string){}
 } 

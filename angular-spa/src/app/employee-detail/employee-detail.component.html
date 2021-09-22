@@ -1,3 +1,25 @@
 <h3>Employee Details</h3>
 <hr/>
-<h4>Employee ID {{eid}}</h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee City</th>
+            <th>Employee Salary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{employee.eid}}</td>
+            <td>{{employee.ename}}</td>
+            <td>{{employee.ecity}}</td>
+            <td>{{employee.esalary}}</td>
+            <td>
+                <button class="btn btn-primary">Edit</button> |
+                <button class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
