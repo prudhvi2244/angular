@@ -1,0 +1,27 @@
+<h3>All Employees</h3>
+<hr/>
+<table class="table table-bordered text-center">
+    <thead class="text-uppercase ">
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee City</th>
+            <th>Employee Email</th>
+            <th>Employee Salary</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of employees'>
+            <td>{{employee.eid}}</td>
+            <td>{{employee.ename}}</td>
+            <td>{{employee.ecity}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.esalary | currency:'INR'}}</td>
+            <td>
+                <button class="btn btn-primary">Edit</button> | 
+                <button (click)="deleteEmployee(employee.eid)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+<h3>Employee Registration Form</h3>
+<hr>
+<form #employeeForm="ngForm" (ngSubmit)="handleForm()">
+    
+    <div class="container">
+        <label for="">Name</label>
+        <input name="ename" [(ngModel)]="employee.ename" type="text" class="form-control">
+    </div>
+    <div class="container">
+        <label for="">City</label>
+        <select  name="ecity" [(ngModel)]="employee.ecity" class="form-control">
+         <option value="">--Select City--</option>
+         <option value={{city}} *ngFor="let city of cities">{{city}}</option>
+        </select>
+
+    </div>
+    <div class="container">
+        <label for="">Email</label>
+        <input name="email" type="email" [(ngModel)]="employee.email"class="form-control">
+    </div>
+    <div class="container">
+        <label for="">Salary</label>
+        <input name="esalary"  [(ngModel)]="employee.esalary" class="form-control">
+    </div>
+   <button class="btn btn-primary">Register</button>
+   <button type="reset" class="btn btn-secondary m-2">Cancel</button>
+</form>
